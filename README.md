@@ -1,18 +1,14 @@
 # free-google-translate-with-puppeteer
 
-spin up a puppeteer instance (with [mega-scraper](https://github.com/christian-fei/mega-scraper)) and translate any text for free.
+spins up a puppeteer instance (with [mega-scraper](https://www.npmjs.com/package/mega-scraper)) and translates any text for free using google translate, headlessly, with a free random proxy (using [get-free-https-proxy](https://www.npmjs.com/package/get-free-https-proxy))
 
 ## example usage
 
 ```js
-#!/usr/bin/env node
 const translate = require('free-google-translate-with-puppeteer')
 
-main()
-.then(() => process.exit(0))
-
-async function main () {
-  const translation = await translate({ text: 'ein apfel am tag hält den arzt fern', from: 'it', to: 'en' })
-  console.log(`-> "${translation}"`) // one apple a day keeps the doctor away
-}
+translate({ text: 'ein apfel am tag hält den arzt fern', from: 'it', to: 'en' })
+  .then(translation => {
+    console.log(`-> "${translation}"`) // one apple a day keeps the doctor away
+  })
 ```
