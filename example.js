@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-const megaScraper = require('mega-scraper')
+const { browser: { createBrowser } } = require('mega-scraper')
 const translate = require('.')
 
 main()
 
 async function main () {
-  const browser = await megaScraper.browser.createBrowser({ headless: true })
+  const browser = await createBrowser({ headless: true })
   const toTranslate = [{
     text: 'ciao, come stai?', from: 'it', to: 'en', browser
   }, {
