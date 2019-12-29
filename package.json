@@ -1,0 +1,26 @@
+{
+  "name": "free-google-translate-with-puppeteer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "mega-scraper": "^11.11.0"
+  },
+  "devDependencies": {
+    "ava": "^2.4.0"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christian-fei/free-google-translate-with-puppeteer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christian-fei/free-google-translate-with-puppeteer/issues"
+  },
+  "homepage": "https://github.com/christian-fei/free-google-translate-with-puppeteer#readme"
+}
