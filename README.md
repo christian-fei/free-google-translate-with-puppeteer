@@ -12,19 +12,7 @@ main()
 .then(() => process.exit(0))
 
 async function main () {
-  const toTranslate = [{
-    text: 'ciao, come stai?', from: 'it', to: 'en'
-  }, {
-    text: 'hey', from: 'en', to: 'es'
-  }, {
-    text: 'one apple a day keeps the doctor away', from: 'en', to: 'de'
-  }, {
-    text: 'one apple a day keeps the doctor away', to: 'de'
-  }]
-  for (const params of toTranslate) {
-    console.log(`Translating "${params.text}" from "${params.from || 'auto'}" to "${params.to}"`)
-    const translation = await translate(params)
-    console.log(`-> "${translation}"`)
-  }
+  const translation = await translate({ text: 'ein apfel am tag hält den arzt fern', from: 'it', to: 'en' })
+  console.log(`-> "${translation}"`) // one apple a day keeps the doctor away
 }
 ```
