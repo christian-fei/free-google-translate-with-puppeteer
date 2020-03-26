@@ -16,17 +16,19 @@ if (require.main === module) {
   module.exports = translate
 }
 
-async function translate ({ text, from = 'auto', to = 'en', browser } = {}) {
+async function translate ({ text, from = 'auto', to = 'en', browser, page } = {}) {
   if (!text) throw new Error('missing text')
   if (!from) throw new Error('missing from')
   if (!to) throw new Error('missing to')
   if (!browser) browser = await createBrowser({ headless: true })
 
-  const page = await browser.newPage(`https://translate.google.com/#view=home&op=translate&sl=${from}&tl=${to}&text=${encodeURIComponent(text)}`)
-  await page.waitForSelector('.tlid-translation')
+  page = page || await browser.newPage()
+  await page.goto(`https://translate.google.com/#view=home&op=translate&sl=${from}&tl=${to}&text=${encodeURIComponent(text)}`)
+  await page.waitForSelector('.tlid-translation', { timeout: 10000 })
 
   const translation = await page.evaluate(() => document.querySelector('.tlid-translation').textContent)
   await page.close()
+  await browser.instance.close()
 
   return translation
 }

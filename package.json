@@ -9,7 +9,8 @@
     "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "ava": "^2.4.0"
+    "ava": "^2.4.0",
+    "p-limit": "^2.2.2"
   },
   "scripts": {
     "test": "ava"
