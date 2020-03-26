@@ -37,6 +37,8 @@ npx free-google-translate-with-puppeteer --text 'hello how are you' --to 'de'
 npm i free-google-translate-with-puppeteer
 ```
 
+see [example.js](https://github.com/christian-fei/free-google-translate-with-puppeteer/blob/master/example.js)
+
 ```js
 const translate = require('free-google-translate-with-puppeteer')
 
